@@ -1,0 +1,62 @@
+
+{% include 'firstweb/header.html' %}
+{% load static %}
+{% block content %}
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>About</h1>
+									</header>
+
+									<span class="image main"><img src="{% static 'firstweb/images/pic11.jpg' %}" alt="" /></span>
+									<p>Welcome to Traveling blog - Your Journey Begins Here!</p>
+									<p>At Traveling blog, we're passionate about creating unforgettable journeys and sharing inspiring travel experiences with the world. Our platform is more than just an app; it's a community of explorers, adventurers, and wanderers who come together to celebrate the beauty of travel.</p>
+									<p>Our Mission:</p>
+									<p>Our mission is to bring the joy of discovery to your fingertips. Whether you're a seasoned globetrotter or someone who's just catching the travel bug, Traveling blog is your companion in exploring the world's wonders. We believe that every journey is a story waiting to be told, and we're here to provide the canvas for your travel tales.</p>
+									
+
+									<hr class="major" />
+
+									<h2>What We Offer</h2>
+									<p> Immerse yourself in captivating travel stories shared by fellow adventurers. From hidden gems to well-known destinations, you'll find inspiration for your next getaway.
+
+										 Our interactive guides provide you with insider tips, local recommendations, and must-see attractions, ensuring you make the most of every trip.
+										
+										 Customize your travel preferences, and we'll tailor our recommendations to match your interests and wanderlust.
+										
+										 Connect with like-minded travelers, share your experiences, and engage in conversations that celebrate the spirit of exploration.
+										
+										 Create and share your own travel stories, complete with photos, memories, and recommendations, to inspire others to embark on their own journeys.</p>
+
+									<hr class="major" />
+
+									<h2>Join My Community</h2>
+									<p>Traveling Blog is more than just a travel app—it's a community of adventurers. We invite you to join us on this journey of discovery, connecting with fellow travelers, learning from their experiences, and adding your own unique chapter to the global travel narrative.</p>
+									<p>As you explore the world, remember that every destination has a story, and every traveler is a storyteller. Start sharing your journey today with Travelling Blog.</p>
+
+									<hr class="major" />
+
+									<h2>Happy travels!</h2>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					{% include 'firstweb/sidebar.html' %}
+
+			</div>
+
+		<!-- Scripts -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/browser.min.js' %}"></script>
+        <script src="{% static 'js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'js/util.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+
+	</body>
+</html>
+{% endblock %}

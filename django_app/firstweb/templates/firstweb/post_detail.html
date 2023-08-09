@@ -1,0 +1,67 @@
+{% include 'firstweb/header.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Content -->
+<section>
+  <img src="{{ post.author.profile.image.url }}" height="50" width="50" />
+  <h2 class="account-heading">{{ user.username }}</h2>
+  <p class="text-secondary">{{ user.email }}</p>
+
+  <div class="row gtr-200">
+    <div class="box alt">
+
+    </div>
+
+    <div class="col-4"><span class="image fit"><img src="{{ object.image.url }}" height="300"
+          width="100" /></span></div>
+
+    <div class="col-6 col-12-medium">
+
+
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row gtr-uniform">
+          <div class="col-12 col-12-xsmall">
+            <h2 class="article-title">{{ object.title }}&nbsp;&nbsp;<h3><small class="text-muted">{{ object.date_posted | date:"F d, Y" }}</small></h3></h2>
+
+
+            <p class="article-content">{{ object.content }}</p>
+          </div>
+
+          {% if object.author == user %}
+          <div class="col-12">
+            <ul class="actions">
+              <li><a href="{% url 'post-update' object.id %}" class="button primary">Update</a></li>
+              <li><a href="{% url 'post-delete' object.id %}" class="button">Delete</a></li>
+
+            </ul>
+          </div>
+          {% endif %}
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+</div>
+</div>
+
+{% include 'firstweb/sidebar.html' %}
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+{% endblock %}
