@@ -1,0 +1,43 @@
+{% include 'firstweb/header.html' %}
+{% load static %}
+{% block content %}
+
+
+							
+								<section>
+									<header class="major">
+                    <h4 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h4>
+									</header>
+									<div class="posts">
+                  {% for post in posts %}
+                  
+										<article>
+                                            <h3><a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a><h3>{{  post.date_posted | date:"F d, Y" }}</h3></h3>
+											<a href="#" class="image"><img src="{{post.author.profile.image.url}}" alt="" /></a>
+											<h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+											<p>{{ post.content }}</p>
+											<ul class="actions">
+												<li><a href="{% url 'post-detail' post.id %}" class="button">More</a></li>
+											</ul>
+										</article>
+                    {% endfor %}
+										</div>
+								</section>
+
+						</div>
+					</div>
+
+			{% include 'firstweb/sidebar.html' %}
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+{% endblock %}
